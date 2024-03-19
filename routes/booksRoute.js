@@ -60,7 +60,7 @@ router.put("/:id", async (req, res) => {
       });
     }
     const { id } = req.params;
-    const result = await Book.findByIdAndUpdate(id, request.body);
+    const result = await Book.findByIdAndUpdate(id, req.body);
     if (!result) {
       return res.status(404).send({ message: "Book Not Found" });
     }
